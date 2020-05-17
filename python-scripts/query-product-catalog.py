@@ -27,9 +27,9 @@ full_url = f"{base_url}{api_method}"
 
 response = requests.get(full_url, headers=headers)
 
-data = response.json()
+res_json = response.json()
 
 print("[*] Here are the products:")
 
-for product in data['products']:
+for product in res_json['products']:
     print(">", product['name'], "\t", "{id:", f"{product['id']}" + "}")
