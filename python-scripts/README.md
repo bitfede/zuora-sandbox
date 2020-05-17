@@ -17,7 +17,7 @@ optional arguments:
                         Your Zuora password
 ```
 
-Example usage:
+Example:
 
 ```
 $ ./query-product-catalog.py -u "user@example.com+testdrive" -p 'examplePassword'
@@ -35,8 +35,26 @@ $ ./query-product-catalog.py -u "user@example.com+testdrive" -p 'examplePassword
 
 Usage:
 
+```
+usage: create-account-and-subscribe.py [-h] -u User -p Password -i Product id
+                                       -d New Customer Data
 
-Example usage:
+Create a customer account and subscribe him to the selected subscription ID
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u User, --user User  Your Zuora username
+  -p Password, --password Password
+                        Your Zuora password
+  -i Product id, --product-id Product id
+                        The product id of the subscription we want to
+                        subscribe the user to
+  -d New Customer Data, --customer-data New Customer Data
+                        The information about the new customer to create
+```
+
+
+Example:
 ```
 $ ./create-account-and-subscribe.py -u "user@example.com+testdrive" -p 'examplePassword' -d '{ "name":"ABC Unlimited",  "currency":"USD",  "billToContact":{    "firstName":"Leo", "lastName":"Liu"  },  "soldToContact":{      "firstName":"Leo",      "lastName":"Liu",      "state":"CA",   "country":"USA" },  "creditCard":{    "cardType":"Visa",    "cardNumber":"4111111111111111",    "expirationMonth":10,    "expirationYear":2020,    "securityCode":"111"  }, "subscription":{    "contractEffectiveDate": "2016-10-01",    "termType":"TERMED",    "autoRenew":false,    "initialTerm":12,    "renewalTerm":12,    "subscribeToRatePlans":[      {        "productRatePlanId": ""      }    ]  } }' -i f2b5989143f80278baa7c93604c6fa54
 
